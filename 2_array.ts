@@ -67,4 +67,40 @@ function minMax(numbArry: number[]):number[]{
     return [max,min]
 }
 
-console.log(minMax([1,2,3,4,5,6,7]))
+// console.log(minMax([1,2,3,4,5,6,7]))
+
+
+
+function removeDuplicates(numbArray:number[]):number[]{
+    const set = new Set(numbArray)
+    return Array.from(set)
+}
+
+// console.log(removeDuplicates([1,2,3,4,5,6,7,7,7,7,7,7]))
+
+
+function moveZeroes(numbArray:number[]):number[]{
+    let nonZero = []
+    let zero = []
+
+    for(let numb of numbArray){
+        if(numb === 0){
+            zero.push(numb)
+        } else {
+            nonZero.push(numb)
+        }
+    }
+
+    return [...nonZero,...zero]
+}
+
+console.log(isDuplicates([0,1,0,3,0,6]))
+
+
+function isDuplicates(numbArray:number[]):boolean{
+    const set = new Set(numbArray)
+    return set.size !== numbArray.length
+}
+
+
+function missingNumber(numbArray:number[]):number{}
