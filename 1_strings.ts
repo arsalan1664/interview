@@ -121,9 +121,32 @@ console.log(firstReapeating("leetcode"))
 // Group words that contain the same characters and character frequencies.
 // Example: ["eat", "tea", "tan", "ate"] → [["eat","tea","ate"],["tan"]]
 
+
+function sortAnagram(strArr: string[]): sting[][]{
+  const map = new Map<string,string[]>()
+
+  
+  for(let word of strArr){
+   const key =  word.split("").sort().join("");
+
+   if(map.has(key)){
+    map.get(key)?.push(word)
+   }else{
+     map.set(key,[word])
+   }
+  };
+
+
+  return [...map.values()]
+}
+
+console.log(sortAnagram(["eat", "tea", "tan", "ate"]))
+
 // 8. Longest Palindromic Substring
 // Find the longest continuous substring that reads the same forward and backward.
 // Example: "babad" → "bab" or "aba"
+
+
 
 // 9. String Compression
 // Compress consecutive repeating characters by replacing them with the character followed by its count.
